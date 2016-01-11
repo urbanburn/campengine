@@ -2,13 +2,30 @@
 <html>
 <head>
   <title>Crewengine</title>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <h1><a class="header-heading" href="/">The camps page!</a></h1>
+    <div class="header-container">
+      <div class="header-desc">Lorem ipsum</div>
+      <div class="header-nav">
+        <a href="/log-in">Log in</a>
+        <a href="/user/new">Register</a>
+        <a href="/log-in-fb">Log in with Facebook</a>
+        <a href="/">Main page</a>
+      </div>
+    </div>
+  </header>
 
-<%= yield %>
+  <div class="main_content">
+    <%= yield %>
+  </div>
 
+  <footer>
+  </footer>
 </body>
 </html>

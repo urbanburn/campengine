@@ -1,0 +1,19 @@
+.camp_card {
+  display: inline-block;
+  float: left;
+  width: 25%;
+  height: 300px;
+  padding: 5px;
+
+  &:hover {
+    background: #FFFB86;
+  }
+}
+
+.camp_card-img {
+  width: 100%;
+  padding-bottom: 100%;
+  margin-bottom: 5px;
+  background: url('http://placehold.it/230x230/C72B71/ffffff');
+  background-repeat: no-repeat;
+}

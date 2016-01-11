@@ -1,0 +1,11 @@
+<div class="camps_list">
+  <% @camps.each do |camp| %>
+    <a href="">
+      <div class="camp_card">
+        <div class="camp_card-img"></div>
+        <h1><%= camp.name %></h1>
+        <span class="camp_card-desc"><%= camp.description %></span>
+      </div>
+    </a>
+  <% end %>
+</div>

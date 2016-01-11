@@ -1,0 +1,10 @@
+.camps_list {
+  clear: both;
+
+  &:before,
+  &:after {
+    content: "";
+    line-height: 0;
+    clear: both;
+  }
+}

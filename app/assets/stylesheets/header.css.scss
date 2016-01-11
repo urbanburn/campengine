@@ -1,0 +1,23 @@
+header {
+  @extend %holder;
+  padding-top: 10px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    margin-left: 15px;
+    font-size: 18px;
+  }
+}
+
+.header-heading {
+  display: block;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.header-nav {
+}
