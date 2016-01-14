@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'camps#index'
+  devise_for :users
   resources :camps
 end
