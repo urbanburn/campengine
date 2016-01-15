@@ -2,12 +2,11 @@
 
 <div class="camps_list">
   <% @camps.each do |camp| %>
-    <a href="">
-      <div class="camp_card">
-        <div class="camp_card-img"></div>
-        <h1><%= camp.name %></h1>
-        <span class="camp_card-desc"><%= camp.description %></span>
-      </div>
-    </a>
+    <div class="camp_card">
+      <div class="camp_card-img"></div>
+      <% id = camp.id %>
+      <h1><%= link_to camp.name, camp_path(camp.id) %></h1>
+      <span class="camp_card-desc"><%= camp.description %></span>
+    </div>
   <% end %>
 </div>

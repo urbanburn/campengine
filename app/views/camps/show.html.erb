@@ -1,0 +1,25 @@
+<%= link_to "New Camp", new_camp_path %>
+<br>
+
+<div class="camp_card">
+  <div class="camp_card-img"></div>
+  <ul>
+    <li><span>Name: <%= @camp.name %></span></li>
+    <li><span>Description: <%= @camp.description %></span></li>
+    <li><span>Members:</span></li>
+    <% @users.each do |user| %>
+      <li><%= "#{user.email} :: #{user.name}" %></li>
+
+    <% end %>
+    <li><span>Size of Necessary Space: <%= @camp.size_of_necessary_space %></span></li>
+    <li><span>Camp Necessities: <%= @camp.camp_necessities %></span></li>
+    <li><span>Needs Art Grant?: <%= @camp.needs_art_grant %></span></li>
+    <li><span>Needs Art Grant?: <%= @camp.needs_art_grant %></span></li>
+    <li><span>Number of Members: <%= @users.length %></span></li>
+    <li><span>Seeking Members?: <%= @camp.seeking_members %></span></li>
+    <li><span>Noise Level (db): <%= @camp.noise_level %></span></li>
+    <li><span>Safety Risks: <%= @camp.safety_risks %></span></li>
+    <li><span>Contact Email: <%= @camp.contact_email %></span></li>
+    <li><span>Contact Name: <%= @camp.contact_name %></span></li>
+    
+</div>
