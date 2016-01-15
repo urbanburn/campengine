@@ -19,15 +19,27 @@ class CampsController < ApplicationController
     @users = @camp.users
   end
 
-=begin
-  # Haven't gotten to really implementing this yet.
-  # For a user to join a camp.
+  # Allow a user to join a particular camp.
   def join
-    # Get ID from post request.
-    id = camp_params[:id]
-    byebug
+    @camp = Camp.find(params[:id])
+
+    params[:user] ? @user = User.find(params[:user]) : @user = nil
+
+    #
+    # Only add a user to the list of associated members if the user isn't
+    # in the list. We should add a uniqueness validation to this.
+    #
+
+    if !@user
+      flash[:notice] = "You need to be logged in to join a Creation."
+    elsif @camp.users.include?(@user)
+      flash[:notice] = "Nice! You've already joined this Creation."
+    else
+      flash[:notice] = "Sweet! You just joined this Creation."
+      @camp.users << @user
+    end
+    redirect_to @camp
   end
-=end
 
   private
 

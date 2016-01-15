@@ -1,15 +1,22 @@
-<%= link_to "New Creation", new_camp_path %>
-<br>
+<!-- TODO: Factor out new and join elements into partials -->
+<div class="new_creation">
+  <h2><%= link_to "New Creation!", new_camp_path %></h2>
+</div>
+
+<!-- FYI, current_user is automagically supplied by Devise.... -->
+<div class="join_creation">
+  <h2><%= button_to "Join Creation!", {action: "join", user: current_user }%></h2>
+
+</div>
 
 <div class="camp_card">
   <div class="camp_card-img"></div>
   <ul>
-    <li><span>Name: <%= @camp.name %></span></li>
+    <li><span>Creation Name: <%= @camp.name %></span></li>
     <li><span>Description: <%= @camp.description %></span></li>
     <li><span>Members:</span></li>
     <% @users.each do |user| %>
-      <li><%= "#{user.email} :: #{user.name}" %></li>
-
+      <li><%= user.email %></li>
     <% end %>
     <li><span>Size of Necessary Space: <%= @camp.size_of_necessary_space %></span></li>
     <li><span>Creation Necessities: <%= @camp.camp_necessities %></span></li>
