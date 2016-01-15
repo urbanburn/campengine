@@ -7,9 +7,9 @@ class CampsController < ApplicationController
   def new
     @camp = Camp.new
   end
-  
+
   def create
-    Camp.create camp_params    
+    Camp.create camp_params
     redirect_to camps_path
   end
 
@@ -18,5 +18,5 @@ class CampsController < ApplicationController
   def camp_params
     params.require(:camp).permit!
   end
-  
+
 end
