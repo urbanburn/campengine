@@ -213,3 +213,20 @@ input[type=checkbox] {
   margin: 0;
   margin-right: 4px;
 }
+
+.notice {
+  color: rgb(105, 117, 57);
+  background: rgb(223, 239, 215);
+  padding: 10px;
+  border: 1px solid rgb(214, 232, 196);
+  border-radius: 5px;
+}
+
+.alert {
+  color: rgb(187, 76, 72);
+  background: rgb(243, 222, 222);
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid rgb(239, 211, 215);
+  border-radius: 5px;
+}
