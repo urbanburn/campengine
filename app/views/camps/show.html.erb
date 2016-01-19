@@ -1,11 +1,59 @@
 <!-- TODO: Factor out new and join elements into partials -->
+<!--
 <div class="new_creation">
   <h2><%= link_to "New Creation!", new_camp_path %></h2>
 </div>
+-->
+
 
 <!-- FYI, current_user is automagically supplied by Devise.... -->
+<!--
 <div class="join_creation">
   <h2><%= button_to "Join Creation!", {action: "join", user: current_user }%></h2>
+</div>
+-->
+
+<h1 class="header-heading"><%= @camp.name %></h1>
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <%= image_tag("test2.jpg") %>
+      <div class="carousel-caption">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag("test1.jpg") %>
+      <div class="carousel-caption">
+        The cyborg does not dream of community on the model of the organic family, this time without the oedipal project. The cyborg would not recognize the Garden of Eden; it is not made of mud and cannot dream of returning to dust.
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag("test3.png") %>
+      <div class="carousel-caption">
+        Another caption, shorter this time.
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
 
 <div class="camp_card">
