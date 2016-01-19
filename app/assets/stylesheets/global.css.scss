@@ -66,6 +66,16 @@ $font-weight-bold: 700;
   text-overflow: ellipsis;
 }
 
+%no_select {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -133,6 +143,23 @@ hr {
   background: $c-gray-light;
 }
 
+%button {
+  @extend %no_select;
+  display: block;
+  padding: 13px 10px;
+  background: $c-green;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  // font-weight: $font-weight-semibold;
+  @extend %textOverflowEllipsis;
+
+  &:active {
+    background: darken($c-green, 10%);
+  }
+}
+
 input,
 textarea,
 button {
@@ -147,4 +174,59 @@ button {
 
 address {
   font-style: normal;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #999;
+}
+
+input[type=text],
+input[type=search],
+input[type=button],
+input[type=submit] {
+  -webkit-appearance: none;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #999;
+}
+
+input[type=submit] {
+  @extend %button;
+  width: 100%;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+input[type=checkbox] {
+  margin: 0;
+  margin-right: 4px;
+}
+
+.notice {
+  color: rgb(105, 117, 57);
+  background: rgb(223, 239, 215);
+  padding: 10px;
+  border: 1px solid rgb(214, 232, 196);
+  border-radius: 5px;
+}
+
+.alert {
+  color: rgb(187, 76, 72);
+  background: rgb(243, 222, 222);
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid rgb(239, 211, 215);
+  border-radius: 5px;
 }
