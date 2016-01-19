@@ -13,67 +13,89 @@
 </div>
 -->
 
-<h1 class="header-heading"><%= @camp.name %></h1>
+<div class="container">
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
+  <h1 class="header-heading"><%= @camp.name %></h1>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <%= image_tag("test2.jpg") %>
-      <div class="carousel-caption">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+
+  <div class="row">
+
+    <div class="col-md-8">
+
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <%= image_tag("test2.jpg") %>
+            <div class="carousel-caption">
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            </div>
+          </div>
+          <div class="item">
+            <%= image_tag("test1.jpg") %>
+            <div class="carousel-caption">
+              The cyborg does not dream of community on the model of the organic family, this time without the oedipal project. The cyborg would not recognize the Garden of Eden; it is not made of mud and cannot dream of returning to dust.
+            </div>
+          </div>
+          <div class="item">
+            <%= image_tag("test3.png") %>
+            <div class="carousel-caption">
+              Another caption, shorter this time.
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
-    </div>
-    <div class="item">
-      <%= image_tag("test1.jpg") %>
-      <div class="carousel-caption">
-        The cyborg does not dream of community on the model of the organic family, this time without the oedipal project. The cyborg would not recognize the Garden of Eden; it is not made of mud and cannot dream of returning to dust.
+
+      <div class="camp-description">
+        <b>Creation description</b>
+        <p><%= @camp.description %></p>
       </div>
+
     </div>
-    <div class="item">
-      <%= image_tag("test3.png") %>
-      <div class="carousel-caption">
-        Another caption, shorter this time.
+
+    <div class="col-md-4">
+
+      <div class="creation-info">
+        <ul>
+          <li><span><b>Creation info</b></span></li>
+          <br>
+          <li><span><b>Contact Name:</b> <%= @camp.contact_name %></span></li>
+          <li><span><b>Contact Email:</b> <%= @camp.contact_email %></span></li>
+          <br>
+          <li><span><b>Size of Space:</b> <%= @camp.size_of_necessary_space %></span></li>
+          <li><span><b>Noise Level:</b> <%= @camp.noise_level %></span></li>
+          <br>
+          <li><span><b>Good to know</b></span></li>
+          <li><span><%= @camp.camp_necessities %></span></li>
+          <br>
+          <li><span><b>Safety Details</b></span></li>
+          <li><span><%= @camp.safety_risks %></span></li>
+          <br>
+          <li><span><b>Members:</b></span></li>
+          <% @users.each do |user| %>
+          <li><%= user.email %></li>
+          <% end %>
+        </div>
+
       </div>
+
     </div>
+
   </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-<div class="camp_card">
-  <div class="camp_card-img"></div>
-  <ul>
-    <li><span>Creation Name: <%= @camp.name %></span></li>
-    <li><span>Description: <%= @camp.description %></span></li>
-    <li><span>Members:</span></li>
-    <% @users.each do |user| %>
-      <li><%= user.email %></li>
-    <% end %>
-    <li><span>Size of Necessary Space: <%= @camp.size_of_necessary_space %></span></li>
-    <li><span>Creation Necessities: <%= @camp.camp_necessities %></span></li>
-    <li><span>Needs Art Grant?: <%= @camp.needs_art_grant %></span></li>
-    <li><span>Needs Art Grant?: <%= @camp.needs_art_grant %></span></li>
-    <li><span>Number of Members: <%= @users.length %></span></li>
-    <li><span>Seeking Members?: <%= @camp.seeking_members %></span></li>
-    <li><span>Noise Level (db): <%= @camp.noise_level %></span></li>
-    <li><span>Safety Risks: <%= @camp.safety_risks %></span></li>
-    <li><span>Contact Email: <%= @camp.contact_email %></span></li>
-    <li><span>Contact Name: <%= @camp.contact_name %></span></li>
-
-</div>
