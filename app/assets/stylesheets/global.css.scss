@@ -22,6 +22,10 @@ $c-gray_light: #d5d1c9;
 $c-gray: #929292;
 $c-gray_dark: #818181;
 
+$c-black: #000000;
+
+$header-font-color: $c-black;
+
 $header-font-color: $c-gray_dark;
 $anchor-color: inherit;
 $hr-border-color: inherit;
@@ -97,7 +101,7 @@ html {
 body {
   background: #fff;
   font-family: 'Source Sans Pro', sans-serif;
-  color: $c-gray_dark;
+  color: $c-black;
   word-wrap: break-word;
   overflow-x: hidden;
 }
