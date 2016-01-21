@@ -1,4 +1,5 @@
 class CampsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @camps = Camp.all
