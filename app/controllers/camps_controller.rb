@@ -9,8 +9,15 @@ class CampsController < ApplicationController
   end
 
   def create
-    Camp.create camp_params
-    redirect_to camps_path
+    @camp = Camp.new(camp_params)
+    @camp.creator = current_user
+
+    if @camp.save
+      redirect_to camps_path
+    else
+      flash.now[:notice] = "Errors: #{@camp.errors.full_messages.join(', ')}"
+      render :new
+    end
   end
 
   # Display a camp and its users
