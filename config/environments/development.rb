@@ -41,4 +41,8 @@ Rails.application.configure do
 
   # Devise installer said to do this, so....
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # CONfiguration to use mailcatcher in development mode
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 end

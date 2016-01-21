@@ -27,3 +27,8 @@ Run them with:
 Currently sqlite is used as database. We will stick to this in development but set up
 postgres in production. Install sqlite with your favourite package manager and you should
 be up and running right away.
+
+## Mail
+
+In development mode [mailcatcher](http://mailcatcher.me/) is configured to catch emails
+locally for easier testing.
