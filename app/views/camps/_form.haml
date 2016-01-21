@@ -1,0 +1,38 @@
+
+= form_for @camp do |form|
+  .combo#name
+    = form.label :name
+    = form.text_field :name
+  .combo#description
+    = form.label :description
+    = form.text_area :description
+  .combo#size_of_necessary_space
+    = form.label :size_of_necessary_space
+    = form.text_area :size_of_necessary_space
+  .combo#camp_necessities
+    = form.label :creation_necessities
+    = form.text_area :camp_necessities
+  .combo#needs_art_grant
+    = form.label :needs_art_grant
+    = form.text_area :needs_art_grant
+  .combo#number_of_members
+    = form.label :number_of_members
+    = form.number_field :number_of_members
+  .combo#seeking_members
+    = form.label :seeking_members
+    = form.check_box :seeking_members
+  .combo#noise_level
+    = form.label :noise_level
+    = form.text_area :noise_level
+  .combo#safety_risks
+    = form.label :safety_risks
+    = form.text_area :safety_risks
+  .combo#contact_email
+    = form.label :contact_email
+    = form.text_field :contact_email
+  .combo#contact_name
+    = form.label :contact_name
+    = form.text_field :contact_name
+
+  .submit
+    = form.submit

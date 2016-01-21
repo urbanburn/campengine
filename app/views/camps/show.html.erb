@@ -88,6 +88,8 @@
           <li><span><b>Safety Details</b></span></li>
           <li><span><%= @camp.safety_risks %></span></li>
           <br>
+	  <li><span><a href="<%= edit_camp_path(@camp) %>">Edit</a></span></li>
+	  <br>
           <li><span><b>Members:</b></span></li>
           <% @users.each do |user| %>
           <li><%= user.email %></li>

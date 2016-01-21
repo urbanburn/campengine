@@ -1,5 +1,5 @@
 class CampsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, except: [:show, :index]
 
   def index
     @camps = Camp.all
@@ -7,6 +7,10 @@ class CampsController < ApplicationController
 
   def new
     @camp = Camp.new
+  end
+
+  def edit
+    @camp = Camp.find params[:id]
   end
 
   def create
@@ -19,6 +23,16 @@ class CampsController < ApplicationController
       flash.now[:notice] = "Errors: #{@camp.errors.full_messages.join(', ')}"
       render :new
     end
+  end
+
+  def update
+    @camp = Camp.find(params[:id])
+    if @camp.update_attributes camp_params
+      redirect_to camp_path(@camp)
+    else
+      flash.now[:notice] = "Errors: #{@camp.errors.full_messages.join(', ')}"
+      render :edit
+    end      
   end
 
   # Display a camp and its users
