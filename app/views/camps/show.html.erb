@@ -71,6 +71,16 @@
         <p><%= @camp.description %></p>
       </div>
 
+      <div class="camp-description">
+        <b>What can I do to help?</b>
+        <p><%= @camp.camp_necessities %></p>
+      </div>
+
+      <div class="camp-description">
+        <b>Safety Details</b>
+        <p><%= @camp.safety_risks %></p>
+      </div>      
+
     </div>
 
     <div class="col-md-3">
@@ -96,16 +106,12 @@
           <li><span><b>Size of Space:</b> <%= @camp.size_of_necessary_space %></span></li>
           <li><span><b>Noise Level:</b> <%= @camp.noise_level %></span></li>
           <br>
-          <li><span><b>Good to know</b></span></li>
-          <li><span><%= @camp.camp_necessities %></span></li>
-          <br>
-          <li><span><b>Safety Details</b></span></li>
-          <li><span><%= @camp.safety_risks %></span></li>
-          <br>
-          <li><span><b>Members:</b></span></li>
+          <!-- <li><span><b>Members:</b></span>
           <% @users.each do |user| %>
-          <li><%= user.email %></li>
+          <%= user.email %>, 
+          </li>
           <% end %>
+          -->
         </div>
 
       </div>
