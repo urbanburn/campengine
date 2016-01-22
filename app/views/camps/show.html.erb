@@ -15,8 +15,11 @@
 
 <div class="container">
 
-  <h1 class="header-heading"><%= @camp.name %></h1>
-
+  <div class="row">
+    <div class="col-md-8">
+      <h1 class="header-heading"><%= @camp.name %></h1>
+    </div>
+  </div>
 
   <div class="row">
 
@@ -70,11 +73,22 @@
 
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-3">
+
+     <% if !user_signed_in? %>
+     <div class="panel panel-default">
+      <div class="panel-heading">What is this?</div>
+      <div class="panel-body">
+        <p>Congratulations! You've stumbled upon something special.
+          Welcome to the Bizaar Star Bazaar, is a festival where all content is created by the participants themselves. It is a part of a network of regional events connected to the Burning Man festival in Black Rock, Nevada. The festival will be held in Stockholm, Sweden from March 11th to March 13th. Get your ticket to the Bazaar here!</p>
+        </div>
+      </div>
+      <% end %>
 
       <div class="creation-info">
         <ul>
-          <li><span><b>Creation info</b></span></li>
+          <li><span><h2 class="header-sub-heading">Creation info</h2></span></li>
+          <li><span><a href="<%= edit_camp_path(@camp) %>">Edit creation</a></span></li>
           <br>
           <li><span><b>Contact Name:</b> <%= @camp.contact_name %></span></li>
           <li><span><b>Contact Email:</b> <%= @camp.contact_email %></span></li>
@@ -88,8 +102,6 @@
           <li><span><b>Safety Details</b></span></li>
           <li><span><%= @camp.safety_risks %></span></li>
           <br>
-	  <li><span><a href="<%= edit_camp_path(@camp) %>">Edit</a></span></li>
-	  <br>
           <li><span><b>Members:</b></span></li>
           <% @users.each do |user| %>
           <li><%= user.email %></li>

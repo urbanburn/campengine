@@ -23,6 +23,9 @@
           <div class="header-container">
             <div class="header-nav">
               <a href="/">Creations</a>
+              <% if user_signed_in? %>
+              <%= link_to "New Creation", new_camp_path %>
+              <% end %>
               <% if !user_signed_in? %>
               <%= link_to "Log in", new_user_session_path %>
               <% end %>
