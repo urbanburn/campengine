@@ -3,6 +3,7 @@ class Camp < ActiveRecord::Base
 
   has_many :memberships
   has_many :users, through: :memberships
+  has_many :images
 
   validates :creator, presence: true
   validates :name, presence: true
