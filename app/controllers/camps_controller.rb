@@ -7,10 +7,12 @@ class CampsController < ApplicationController
 
   def new
     @camp = Camp.new
+    @submit_text = 'Create creation'
   end
 
   def edit
     @camp = Camp.find params[:id]
+    @submit_text = 'Update creation'
   end
 
   def create
@@ -32,7 +34,7 @@ class CampsController < ApplicationController
     else
       flash.now[:notice] = "Errors: #{@camp.errors.full_messages.join(', ')}"
       render :edit
-    end      
+    end
   end
 
   # Display a camp and its users
