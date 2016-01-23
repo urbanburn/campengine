@@ -38,7 +38,7 @@
         <div class="carousel-inner" role="listbox">
           <% @camp.images.each_with_index do |image, index| %>
             <% status = "" %>
-            <% if index == 1 %>
+            <% if index == 0 %>
               <% status = "active" %>
             <% end %>
             <% image_path = camp_image_path(camp_id: @camp.id, id: image.id) %>
