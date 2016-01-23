@@ -34,25 +34,23 @@
         </ol>
 
         <!-- Wrapper for slides -->
+
         <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <%= image_tag("test2.jpg") %>
-            <div class="carousel-caption">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          <% @camp.images.each_with_index do |image, index| %>
+            <% status = "" %>
+            <% if index == 1 %>
+              <% status = "active" %>
+            <% end %>
+            <% image_path = camp_image_path(camp_id: @camp.id, id: image.id) %>
+
+            <div class="item <%= status %>">
+              <%= image_tag(image_path) %>
+              <div class="carousel-caption">
+                <p></p>
+              </div>
             </div>
-          </div>
-          <div class="item">
-            <%= image_tag("test1.jpg") %>
-            <div class="carousel-caption">
-              The cyborg does not dream of community on the model of the organic family, this time without the oedipal project. The cyborg would not recognize the Garden of Eden; it is not made of mud and cannot dream of returning to dust.
-            </div>
-          </div>
-          <div class="item">
-            <%= image_tag("test3.png") %>
-            <div class="carousel-caption">
-              Another caption, shorter this time.
-            </div>
-          </div>
+
+          <% end %>
         </div>
 
         <!-- Controls -->
@@ -81,7 +79,7 @@
         <p><%= @camp.safety_risks %></p>
       </div>      
 
-    </div>
+    </div> <!-- col-md-8 -->
 
     <div class="col-md-3">
 
@@ -99,28 +97,35 @@
         <ul>
           <li><span><h2 class="header-sub-heading">Creation info</h2></span></li>
           <li><span><a href="<%= edit_camp_path(@camp) %>">Edit creation</a></span></li>
-	  <br>
           <li><span><a href="<%= camp_images_path(@camp) %>">Manage images</a></span></li>
           <br>
           <li><span><b>Contact Name:</b> <%= @camp.contact_name %></span></li>
           <li><span><b>Contact Email:</b> <%= @camp.contact_email %></span></li>
-          <li><span><b>Seeking co-creators:</b> <%= @camp.seeking_members %></span></li>
-          <br>
           <li><span><b>Size of Space:</b> <%= @camp.size_of_necessary_space %></span></li>
           <li><span><b>Noise Level:</b> <%= @camp.noise_level %></span></li>
           <li><span><b>Seeking art grant:</b> <%= @camp.needs_art_grant %></span></li>
           <li><span><b>Number of co-creators:</b> <%= @camp.needs_art_grant %></span></li>
           <br>
+          <% if @camp.seeking_members %>
+            <li><span><em><%= @camp.name %></em> is looking for co-creators. Send them an email and join in!</span></li>
+          <% end %>
+          <br>
+          <% if @camp.needs_art_grant %>
+            <li><span><em><%= @camp.name %></em> are interested in getting an art grant.</span></li>
+          <% end %>
+
           <!-- <li><span><b>Members:</b></span>
           <% @users.each do |user| %>
           <%= user.email %>, 
           </li>
           <% end %>
           -->
-        </div>
+        </ul>
 
-      </div>
+      </div> <!-- creation-info -->
 
-    </div>
+      </div> <!-- col-md-3 -->
 
-  </div>
+    </div> <!-- row -->
+
+  </div> <!-- container -->
