@@ -20,6 +20,14 @@ describe CampsController do
       }
     }
 
+    let(:email) { Faker::Internet.email }
+
+    let(:user) { User.create! email: email, password: Faker::Internet.password }
+
+    before do
+      sign_in user
+    end
+
     it 'got a form' do
       get :new
 
