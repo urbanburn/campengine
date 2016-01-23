@@ -1,41 +1,74 @@
 .camp_card {
-display: inline-block;
-float: left;
-width: 25%;
-height: 350px;
-padding: 5px;
+  display: inline-block;
+  float: left;
+  width: 50%;
+  // height: 350px;
+  padding: 10px;
+  margin-bottom: 20px;
 
-&:hover {
-background: #FFFB86;
-}
+  &:hover {
+    background: #FFFB86;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+
+  h1 {
+    height: 19px;
+    margin: 7px 0;
+
+    @media (max-width: 991px) {
+      height: 38px;
+    }
+
+    @media (max-width: 600px) {
+      height: auto;
+    }
+  }
 }
 
 p {
-padding-bottom: 1em;
+  padding-bottom: 1em;
 }
 
 .creation-info {
 }
 
 .camp_card-img {
-width: 100%;
-padding-bottom: 100%;
-margin-bottom: 5px;
-background: url('http://placehold.it/230x230/C72B71/ffffff');
-background-repeat: no-repeat;
+  width: 100%;
+  padding-bottom: 66%;
+  margin-bottom: 5px;
+  background: url('http://placehold.it/750x400/C72B71/ffffff');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.camp_card-desc {
+  display: block;
+  height: 40px;
+
+  @media (max-width: 991px) {
+    height: 60px;
+  }
+
+  @media (max-width: 600px) {
+    height: auto;
+  }
 }
 
 .carousel-inner{
-width:100%;
-max-height: 400px !important;
+  width:100%;
+  max-height: 400px !important;
 }
 
 .carousel-caption {
-max-width: 400px;
-text-align:center;
-top: 270px;
+  max-width: 400px;
+  text-align:center;
+  top: 270px;
 }
 
 .camp-description{
-margin-top: 10px;
+  margin-top: 10px;
 }
