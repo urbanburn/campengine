@@ -98,11 +98,13 @@
           <li><span><h2 class="header-sub-heading">Creation info</h2></span></li>
           <li><span><a href="<%= edit_camp_path(@camp) %>">Edit creation</a></span></li>
           <li><span><a href="<%= camp_images_path(@camp) %>">Manage images</a></span></li>
-          <li><span>
-            <%= form_for @camp, method: :delete do |f| %>
-              <%= f.submit 'Delete this creation', data: { confirm: 'Are you sure?' } %>
-            <% end %>
-	  </span></li>
+	  <% if current_user && @camp.creator == current_user %>
+            <li><span>
+              <%= form_for @camp, method: :delete do |f| %>
+                <%= f.submit 'Delete this creation', data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            </span></li>
+          <% end %>
           <br>
           <li><span><b>Contact Name:</b> <%= @camp.contact_name %></span></li>
           <li><span><b>Contact Email:</b> <%= @camp.contact_email %></span></li>
