@@ -37,6 +37,13 @@ class CampsController < ApplicationController
     end
   end
 
+  def destroy
+    @camp = Camp.find(params[:id])
+    @camp.destroy!
+
+    redirect_to camps_path
+  end
+
   # Display a camp and its users
   def show
     @camp = Camp.find(params[:id])
