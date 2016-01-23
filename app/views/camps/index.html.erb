@@ -16,7 +16,23 @@
   <% @camps.each do |camp| %>
   <a href="<%= url_for(camp) %>">
     <div class="camp_card">
-      <div class="camp_card-img"></div>
+      <div class="camp_card-img">
+
+          <% if camp.images.any? %>
+
+            <% camp.images.each_with_index do |image, index| %>
+              <% if index == 1 %>
+                <% image_path = camp_image_path(camp_id: camp.id, id: image.id) %>
+                <%= image_tag(image_path) %>
+              <% end %>
+            <% end %>
+
+          <% else %>
+             <%= image_tag("http://placehold.it/750x400") %>
+
+          <% end %>
+
+      </div>
       <% id = camp.id %>
       <h1><%= truncate(camp.name, length: 50) %></h1>
       <span class="camp_card-desc"><%= truncate(camp.description, length: 130) %></span>
