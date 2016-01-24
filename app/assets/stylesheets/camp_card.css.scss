@@ -2,7 +2,6 @@
   display: inline-block;
   float: left;
   width: 50%;
-  // height: 350px;
   padding: 10px;
   margin-bottom: 20px;
 
@@ -37,7 +36,7 @@ p {
 
 .camp_card-img {
   width: 100%;
-  object-fit: cover;
+  padding-bottom: 66%;
   margin-bottom: 5px;
   background-size: cover;
   background-position: center;
