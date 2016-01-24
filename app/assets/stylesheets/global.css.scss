@@ -5,7 +5,7 @@
 $c-orange: #fba230;
 $c-orange_dark: #f27a22;
 
-$c-red: #e87847;
+$c-red: #a94442;
 
 $c-blue_light: #cfe3e4;
 $c-blue: #004a80;
@@ -101,6 +101,7 @@ html {
 body {
   background: #fff;
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
   color: $c-black;
   word-wrap: break-word;
   overflow-x: hidden;
@@ -147,75 +148,8 @@ hr {
   background: $c-gray-light;
 }
 
-%button {
-  @extend %no_select;
-  display: block;
-  padding: 13px 10px;
-  background: $c-green;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-  // font-weight: $font-weight-semibold;
-  @extend %textOverflowEllipsis;
-
-  &:active {
-    background: darken($c-green, 10%);
-  }
-}
-
-input,
-textarea,
-button {
-  font-size: 1rem;
-  color: $c-gray_dark;
-  font-family: 'source-sans-Pro', sans-serif;
-}
-button {
-  cursor: pointer;
-  color: $c-gray_dark;
-}
-
 address {
   font-style: normal;
-}
-
-textarea {
-  display: block;
-  width: 100%;
-  padding: 5px;
-  margin-top: 5px;
-  border-radius: 5px;
-  border: 1px solid #999;
-}
-
-input[type=text],
-input[type=search],
-input[type=button],
-input[type=submit] {
-  -webkit-appearance: none;
-}
-
-input[type=text],
-input[type=email],
-input[type=password] {
-  width: 100%;
-  padding: 5px;
-  margin-top: 5px;
-  border-radius: 5px;
-  border: 1px solid #999;
-}
-
-input[type=submit] {
-  @extend %button;
-  width: 100%;
-  margin-top: 15px;
-  cursor: pointer;
-}
-
-input[type=checkbox] {
-  margin: 0;
-  margin-right: 4px;
 }
 
 .notice {

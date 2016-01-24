@@ -12,7 +12,10 @@
  *
  */
 
+// These imports have to be first and order is important.
 @import 'global';
+@import 'forms';
+
 @import 'camp_card';
 @import 'camps';
 @import 'devise';
